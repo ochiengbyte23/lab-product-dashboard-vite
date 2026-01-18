@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProductList from './components/ProductList';
 
+
 const App = () => {
   // TODO: Define initial product data
 
@@ -31,16 +32,31 @@ const App = () => {
   });
 
   return (
-    <div>
-      <h1 id='header'>Product Dashboard</h1>
+    <div style={{ padding: '20px', backgroundColor: '#f9f9f9', minHeight: '100vh' }}>
+      <h1 id="header"
+        style={{
+          backgroundColor: 'white',
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+          padding: '20px',
+          borderRadius: '8px',
+          marginBottom: '30px',
+          textAlign: 'center'
+        }}
+      >Product Dashboard</h1>
 
       {/* TODO: Add buttons to allow filtering by availability */}
-      <button onClick={() => setFilter("all")}>All</button>
-      <button onClick={() => setFilter("inStock")}>In Stock</button>
-      <button onClick={() => setFilter("outOfStock")}>Out of Stock</button>
+      <div
+        style={{
+          display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '30px', padding: '2opx'
+        }}>
+        <button onClick={() => setFilter("all")}>All</button>
+        <button onClick={() => setFilter("inStock")}>In Stock</button>
+        <button onClick={() => setFilter("outOfStock")}>Out of Stock</button>
+      </div>
+
       {/* TODO: Render the ProductList component and pass filtered products */}
       <ProductList products={filteredProducts} onDelete={handleDelete} />
-    </div>
+    </div >
   );
 };
 

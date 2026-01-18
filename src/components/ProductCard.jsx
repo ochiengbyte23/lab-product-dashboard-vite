@@ -19,7 +19,7 @@ const ProductCard = ({ product, onDelete }) => {
         {product.inStock ? "InStock" : "OutOfStock"}
       </p>
 
-      <button onClick={() => onDelete(product.id)}>Remove</button>
+      <button className={styles.deleteBtn} onClick={() => onDelete(product.id)}>Remove</button>
     </div>
   );
 };
